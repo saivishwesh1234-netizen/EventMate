@@ -1,0 +1,5 @@
+[build]
+  # Copy only the static frontend into the publish directory so backend
+  # files (server.js, data/, etc.) are not served publicly.
+  command = "rm -rf public && mkdir -p public && cp index.html style.css script.js firebase-config.js public/"
+  publish = "public"
