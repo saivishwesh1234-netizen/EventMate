@@ -1,0 +1,128 @@
+{
+  "events": [
+    {
+      "id": "hackathon-2026",
+      "name": "HackSphere 2026: National 36-Hour Hackathon",
+      "dateTime": "2026-11-14T09:00",
+      "venue": "Main Campus Auditorium & Tech Hub, Block C (Hybrid / Discord)",
+      "description": "Join 500+ student developers, designers, and innovators to build cutting-edge AI, Web3, and social impact solutions.",
+      "registrationLink": "https://hacksphere2026.devpost.com/register",
+      "tone": "exciting"
+    },
+    {
+      "id": "ai-masterclass",
+      "name": "GenAI & Prompt Engineering Masterclass",
+      "dateTime": "2026-10-25T14:30",
+      "venue": "Seminar Hall 2 & Live Stream via Google Meet",
+      "description": "An intensive hands-on session exploring Large Language Models and prompt engineering.",
+      "registrationLink": "https://events.college.edu/workshops/genai-2026",
+      "tone": "professional"
+    },
+    {
+      "id": "cultural-night",
+      "name": "Campus Beat: Indie Music & Cultural Night",
+      "dateTime": "2026-11-05T18:00",
+      "venue": "Open Air Amphitheatre, North Campus",
+      "description": "Live bands, acoustic open mics, and campus cultural celebration.",
+      "registrationLink": "https://tickets.campusevents.org/campus-beat-2026",
+      "tone": "friendly"
+    }
+  ],
+  "members": [
+    {
+      "id": "mem-001",
+      "name": "Test User",
+      "phone": "+919876543210",
+      "eventId": "hackathon-2026",
+      "eventName": "HackSphere 2026: National 36-Hour Hackathon",
+      "consent": true,
+      "consentTimestamp": "2026-10-10T20:46:21.538Z",
+      "createdAt": "2026-10-10T09:15:00.000Z",
+      "updatedAt": "2026-10-10T20:46:21.539Z"
+    },
+    {
+      "id": "mem-002",
+      "name": "Sarah Jenkins",
+      "phone": "+14155552671",
+      "eventId": "hackathon-2026",
+      "eventName": "HackSphere 2026: National 36-Hour Hackathon",
+      "consent": true,
+      "consentTimestamp": "2026-10-10T11:42:00.000Z",
+      "createdAt": "2026-10-10T11:42:00.000Z"
+    },
+    {
+      "id": "mem-003",
+      "name": "Rohan Patel",
+      "phone": "+919812345678",
+      "eventId": "ai-masterclass",
+      "eventName": "GenAI & Prompt Engineering Masterclass",
+      "consent": true,
+      "consentTimestamp": "2026-10-10T14:20:00.000Z",
+      "createdAt": "2026-10-10T14:20:00.000Z"
+    },
+    {
+      "id": "mem-004",
+      "name": "Priya Nair",
+      "phone": "+919898989898",
+      "eventId": "cultural-night",
+      "eventName": "Campus Beat: Indie Music & Cultural Night",
+      "consent": true,
+      "consentTimestamp": "2026-10-10T16:05:00.000Z",
+      "createdAt": "2026-10-10T16:05:00.000Z"
+    },
+    {
+      "id": "mem-1791666577083-278",
+      "name": "Dhanush Dudam",
+      "phone": "+919876501234",
+      "eventId": "hackathon-2026",
+      "eventName": "HackSphere 2026: National 36-Hour Hackathon",
+      "consent": true,
+      "consentTimestamp": "2026-10-10T21:09:37.082Z",
+      "createdAt": "2026-10-10T21:09:37.083Z"
+    }
+  ],
+  "logs": [
+    {
+      "id": "log-1791666577593-532",
+      "sentAt": "2026-10-10T21:09:37.593Z",
+      "eventId": "hackathon-2026",
+      "eventName": "HackSphere 2026: National 36-Hour Hackathon",
+      "recipientName": "Test User",
+      "recipientPhone": "+919876543210",
+      "messageType": "template",
+      "templateName": "event_announcement",
+      "status": "simulated",
+      "metaMessageId": "wamid.DEMO_1791666577256_90645",
+      "details": "Simulated delivery in Demo Mode. (No live Meta API credentials configured or DEMO_MODE=true).",
+      "isDemo": true
+    },
+    {
+      "id": "log-1791666577595-827",
+      "sentAt": "2026-10-10T21:09:37.595Z",
+      "eventId": "hackathon-2026",
+      "eventName": "HackSphere 2026: National 36-Hour Hackathon",
+      "recipientName": "Sarah Jenkins",
+      "recipientPhone": "+14155552671",
+      "messageType": "template",
+      "templateName": "event_announcement",
+      "status": "simulated",
+      "metaMessageId": "wamid.DEMO_1791666577424_16350",
+      "details": "Simulated delivery in Demo Mode. (No live Meta API credentials configured or DEMO_MODE=true).",
+      "isDemo": true
+    },
+    {
+      "id": "log-1791666577597-455",
+      "sentAt": "2026-10-10T21:09:37.597Z",
+      "eventId": "hackathon-2026",
+      "eventName": "HackSphere 2026: National 36-Hour Hackathon",
+      "recipientName": "Dhanush Dudam",
+      "recipientPhone": "+919876501234",
+      "messageType": "template",
+      "templateName": "event_announcement",
+      "status": "simulated",
+      "metaMessageId": "wamid.DEMO_1791666577589_25224",
+      "details": "Simulated delivery in Demo Mode. (No live Meta API credentials configured or DEMO_MODE=true).",
+      "isDemo": true
+    }
+  ]
+}

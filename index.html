@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Mate – Smart Event Communication Generator</title>
+  
+  <!-- Google Fonts: Inter & Outfit -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons 6.4 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  
+  <!-- Custom Modern CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       SITE HEADER & NAVIGATION BAR
+       ========================================================================= -->
+  <header class="site-header">
+    <div class="container">
+      <div class="header-inner">
+        <!-- Logo -->
+        <a href="#home" class="logo-group" data-route="home">
+          <div class="logo-icon">
+            <i class="fa-solid fa-bullhorn"></i>
+          </div>
+          <div>
+            <div class="logo-text">Event<span class="logo-accent">Mate</span></div>
+          </div>
+          <span class="badge-tag">Hackathon MVP</span>
+        </a>
+
+        <!-- Desktop Navigation Menu -->
+        <ul class="nav-menu" id="nav-menu">
+          <li>
+            <a href="#home" class="nav-link active" data-route="home">
+              <i class="fa-solid fa-house"></i> Home
+            </a>
+          </li>
+          <li>
+            <a href="#create" class="nav-link" data-route="create">
+              <i class="fa-solid fa-circle-plus"></i> Create Event
+            </a>
+          </li>
+          <li>
+            <a href="#generated" class="nav-link" data-route="generated">
+              <i class="fa-solid fa-wand-magic-sparkles"></i> Generated Content
+            </a>
+          </li>
+          <li>
+            <a href="#events" class="nav-link" data-route="events">
+              <i class="fa-solid fa-layer-group"></i> My Events
+            </a>
+          </li>
+          <li>
+            <a href="#about" class="nav-link" data-route="about">
+              <i class="fa-solid fa-circle-info"></i> About
+            </a>
+          </li>
+          <li>
+            <a href="#help" class="nav-link" data-route="help">
+              <i class="fa-regular fa-circle-question"></i> Help & FAQs
+            </a>
+          </li>
+        </ul>
+
+        <!-- Header Actions -->
+        <div class="header-actions">
+          <div class="status-pill" id="status-pill" title="Click to view connection info">
+            <span class="status-dot demo" id="status-dot"></span>
+            <span id="status-text">Demo Mode (Local)</span>
+          </div>
+
+          <button class="btn btn-primary btn-sm" data-route="create">
+            <i class="fa-solid fa-plus"></i> New Event
+          </button>
+
+          <button class="btn-mobile-toggle" id="btn-mobile-menu" aria-label="Toggle navigation menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- =========================================================================
+       MAIN CONTENT SCREENS CONTAINER
+       ========================================================================= -->
+  <main class="main-content">
+    <div class="container">
+
+      <!-- =====================================================================
+           SCREEN 1: HOME / LANDING
+           ===================================================================== -->
+      <section class="page-screen active" id="screen-home">
+        <!-- Hero Section -->
+        <div class="hero-section">
+          <div class="hero-pill">
+            <i class="fa-solid fa-bolt"></i> 100% Free & Open-Source for Campus Organizers
+          </div>
+          <h1 class="hero-title">
+            One Event. Every Message. <span class="gradient-text">Instantly.</span>
+          </h1>
+          <p class="hero-subtitle">
+            Create announcements, invitations, reminders, and FAQs in seconds. Enter your event details once and get ready-to-share copy for Instagram, WhatsApp, Email, and college notice boards.
+          </p>
+          <div class="hero-cta-group">
+            <button class="btn btn-primary btn-lg" data-route="create">
+              <i class="fa-solid fa-wand-magic-sparkles"></i> Start Creating Free
+            </button>
+            <button class="btn btn-secondary btn-lg" data-route="events">
+              <i class="fa-solid fa-folder-open"></i> View Saved Events
+            </button>
+          </div>
+
+          <!-- Feature Highlights Strip -->
+          <div class="hero-features-strip">
+            <div class="feature-pill-card">
+              <div class="feature-icon-box purple">
+                <i class="fa-brands fa-instagram"></i>
+              </div>
+              <div>
+                <h4>Social Media Captions</h4>
+                <p>Tailored copy for Instagram, LinkedIn, and X with hashtags & calls to action.</p>
+              </div>
+            </div>
+
+            <div class="feature-pill-card">
+              <div class="feature-icon-box blue">
+                <i class="fa-solid fa-landmark"></i>
+              </div>
+              <div>
+                <h4>College Circulars</h4>
+                <p>Formal academic notices and enthusiastic student club circulars.</p>
+              </div>
+            </div>
+
+            <div class="feature-pill-card">
+              <div class="feature-icon-box emerald">
+                <i class="fa-brands fa-whatsapp"></i>
+              </div>
+              <div>
+                <h4>1-Click WhatsApp Drafts</h4>
+                <p>Ready with emojis, bold formatting, and direct WhatsApp review links.</p>
+              </div>
+            </div>
+
+            <div class="feature-pill-card">
+              <div class="feature-icon-box amber">
+                <i class="fa-solid fa-calendar-check"></i>
+              </div>
+              <div>
+                <h4>Smart Timed Reminders</h4>
+                <p>Calculates 1-week, 1-day, and event-day suggested dispatch schedules.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           SCREEN 2: CREATE EVENT (FORM)
+           ===================================================================== -->
+      <section class="page-screen" id="screen-create">
+        <div class="form-card">
+          <div class="form-header">
+            <div>
+              <h2 class="form-header-title">Enter Event Details</h2>
+              <p class="form-header-subtitle">
+                Fill in the details below once. We'll automatically generate all 6 communication kits!
+              </p>
+            </div>
+            <!-- Quick Fill Presets -->
+            <div class="sample-presets-group">
+              <span style="font-size:0.8rem; font-weight:600; color:var(--text-muted);">Quick Presets:</span>
+              <button type="button" class="preset-chip" data-preset="hackathon">
+                <i class="fa-solid fa-code"></i> Hackathon
+              </button>
+              <button type="button" class="preset-chip" data-preset="workshop">
+                <i class="fa-solid fa-laptop-code"></i> Workshop
+              </button>
+              <button type="button" class="preset-chip" data-preset="fest">
+                <i class="fa-solid fa-masks-theater"></i> Cultural Fest
+              </button>
+            </div>
+          </div>
+
+          <form id="event-details-form" novalidate>
+            <div class="form-grid">
+              
+              <!-- Event Name -->
+              <div class="form-group col-span-2">
+                <label class="form-label" for="eventName">
+                  <span>Event Name <span class="req">*</span></span>
+                  <span class="hint">e.g. HackTech 2026</span>
+                </label>
+                <input type="text" id="eventName" class="form-control" placeholder="Enter the official name of the event" required>
+                <span class="field-error-msg" id="err-eventName"></span>
+              </div>
+
+              <!-- Event Category -->
+              <div class="form-group">
+                <label class="form-label" for="category">
+                  <span>Event Category <span class="req">*</span></span>
+                </label>
+                <select id="category" class="form-control" required>
+                  <option value="Hackathon">Hackathon</option>
+                  <option value="Workshop" selected>Workshop</option>
+                  <option value="Seminar">Seminar</option>
+                  <option value="Fest">Fest</option>
+                  <option value="Conference">Conference</option>
+                  <option value="Sports">Sports</option>
+                  <option value="Business">Business</option>
+                  <option value="Other">Other</option>
+                </select>
+                <span class="field-error-msg" id="err-category"></span>
+              </div>
+
+              <!-- Organizer Name -->
+              <div class="form-group">
+                <label class="form-label" for="organizer">
+                  <span>Organizer / Organization <span class="req">*</span></span>
+                </label>
+                <input type="text" id="organizer" class="form-control" placeholder="e.g. ACM Student Chapter & Dept of AI" required>
+                <span class="field-error-msg" id="err-organizer"></span>
+              </div>
+
+              <!-- Event Date -->
+              <div class="form-group">
+                <label class="form-label" for="eventDate">
+                  <span>Event Date <span class="req">*</span></span>
+                </label>
+                <input type="date" id="eventDate" class="form-control" required>
+                <span class="field-error-msg" id="err-eventDate"></span>
+              </div>
+
+              <!-- Time (Start & End) -->
+              <div class="form-group">
+                <label class="form-label" for="startTime">
+                  <span>Start Time & End Time <span class="req">*</span></span>
+                </label>
+                <div style="display:flex; gap:0.5rem;">
+                  <input type="time" id="startTime" class="form-control" style="flex:1;" required>
+                  <input type="time" id="endTime" class="form-control" style="flex:1;" placeholder="End time">
+                </div>
+                <span class="field-error-msg" id="err-startTime"></span>
+              </div>
+
+              <!-- Venue / Online Link -->
+              <div class="form-group col-span-2">
+                <label class="form-label" for="venue">
+                  <span>Venue or Online Meeting Link <span class="req">*</span></span>
+                  <span class="hint">Physical room or Zoom/Google Meet link</span>
+                </label>
+                <input type="text" id="venue" class="form-control" placeholder="e.g. Main Auditorium, Tech Block or https://meet.google.com/xyz" required>
+                <span class="field-error-msg" id="err-venue"></span>
+              </div>
+
+              <!-- Event Description -->
+              <div class="form-group col-span-2">
+                <label class="form-label" for="description">
+                  <span>Event Description & Highlights <span class="req">*</span></span>
+                  <span class="hint">What is the event about? What will attendees learn or experience?</span>
+                </label>
+                <textarea id="description" class="form-control" placeholder="Provide a concise 2-4 sentence summary of your event..." required></textarea>
+                <span class="field-error-msg" id="err-description"></span>
+              </div>
+
+              <!-- Target Audience -->
+              <div class="form-group">
+                <label class="form-label" for="targetAudience">
+                  <span>Target Audience</span>
+                  <span class="hint">Who should attend?</span>
+                </label>
+                <input type="text" id="targetAudience" class="form-control" placeholder="e.g. All undergraduate students & coding enthusiasts">
+              </div>
+
+              <!-- Registration Link -->
+              <div class="form-group">
+                <label class="form-label" for="registrationLink">
+                  <span>Registration Link</span>
+                  <span class="hint">Google Form, Unstop, or portal link</span>
+                </label>
+                <input type="url" id="registrationLink" class="form-control" placeholder="https://forms.gle/... or https://unstop.com/...">
+              </div>
+
+              <!-- Contact Information -->
+              <div class="form-group">
+                <label class="form-label" for="contactInfo">
+                  <span>Contact Email or Phone Number</span>
+                </label>
+                <input type="text" id="contactInfo" class="form-control" placeholder="e.g. info@club.org | +91 98765 43210">
+              </div>
+
+              <!-- Additional Instructions -->
+              <div class="form-group">
+                <label class="form-label" for="additionalInfo">
+                  <span>Additional Instructions / Fee / Requirements</span>
+                </label>
+                <input type="text" id="additionalInfo" class="form-control" placeholder="e.g. Free entry, bring laptop & college ID card, certificates for all">
+              </div>
+
+              <!-- Communication Tone -->
+              <div class="form-group">
+                <label class="form-label" for="tone">
+                  <span>Communication Tone</span>
+                </label>
+                <select id="tone" class="form-control">
+                  <option value="Professional">Professional (Academic & Corporate)</option>
+                  <option value="Friendly" selected>Friendly (Warm & Approachable)</option>
+                  <option value="Exciting">Exciting (High Energy & Inspiring)</option>
+                  <option value="Formal">Formal (Strict Circular / Notice)</option>
+                </select>
+              </div>
+
+              <!-- Language Preference -->
+              <div class="form-group">
+                <label class="form-label" for="language">
+                  <span>Language Preference</span>
+                </label>
+                <select id="language" class="form-control">
+                  <option value="English" selected>English</option>
+                  <option value="Telugu">Telugu (తెలుగు)</option>
+                  <option value="Hindi">Hindi (हिंदी)</option>
+                </select>
+              </div>
+
+            </div>
+
+            <!-- Form Actions -->
+            <div class="form-actions">
+              <button type="button" class="btn btn-secondary" id="btn-clear-form">
+                <i class="fa-solid fa-rotate-left"></i> Clear Form
+              </button>
+
+              <button type="submit" class="btn btn-primary btn-lg" id="btn-generate-submit">
+                <i class="fa-solid fa-wand-magic-sparkles"></i> Generate All Content
+              </button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           SCREEN 3: GENERATED CONTENT DASHBOARD
+           ===================================================================== -->
+      <section class="page-screen" id="screen-generated">
+        <!-- Event Summary Header -->
+        <div class="content-dashboard-header">
+          <div>
+            <h2 style="font-size:1.6rem; font-weight:800; color:var(--text-main);" id="gen-event-title">Event Communication Kit</h2>
+            <div class="event-summary-badge-group">
+              <span class="meta-chip"><i class="fa-regular fa-building"></i> <span id="gen-event-org">Organizer</span></span>
+              <span class="meta-chip"><i class="fa-regular fa-calendar"></i> <span id="gen-event-date">Date</span></span>
+              <span class="meta-chip"><i class="fa-solid fa-tag"></i> <span id="gen-event-category">Category</span></span>
+              <span class="meta-chip"><i class="fa-solid fa-masks-theater"></i> <span id="gen-event-tone">Tone</span></span>
+              <span class="meta-chip"><i class="fa-solid fa-language"></i> <span id="gen-event-lang">Language</span></span>
+            </div>
+          </div>
+          
+          <div class="dashboard-toolbar">
+            <button class="btn btn-primary" id="btn-download-all">
+              <i class="fa-solid fa-download"></i> Download All (.txt)
+            </button>
+            <button class="btn btn-secondary" id="btn-save-event">
+              <i class="fa-regular fa-bookmark"></i> Save Event
+            </button>
+            <button class="btn btn-secondary" id="btn-generate-again" title="Refresh all generated variations">
+              <i class="fa-solid fa-rotate"></i> Generate All Again
+            </button>
+            <button class="btn btn-ghost" data-route="create" title="Back to edit form">
+              <i class="fa-regular fa-pen-to-square"></i> Edit Details
+            </button>
+          </div>
+        </div>
+
+        <!-- Filter Category Tabs -->
+        <div class="content-tabs-nav">
+          <button class="content-tab-btn active" data-filter="all">
+            All Content <span class="count-badge" id="count-badge-all">0</span>
+          </button>
+          <button class="content-tab-btn" data-filter="captions">
+            <i class="fa-brands fa-instagram"></i> Captions & Tags <span class="count-badge" id="count-badge-captions">0</span>
+          </button>
+          <button class="content-tab-btn" data-filter="announcements">
+            <i class="fa-solid fa-bullhorn"></i> Announcements <span class="count-badge" id="count-badge-announcements">0</span>
+          </button>
+          <button class="content-tab-btn" data-filter="email">
+            <i class="fa-regular fa-envelope"></i> Email Invitations <span class="count-badge" id="count-badge-email">0</span>
+          </button>
+          <button class="content-tab-btn" data-filter="whatsapp">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp Messages <span class="count-badge" id="count-badge-whatsapp">0</span>
+          </button>
+          <button class="content-tab-btn" data-filter="reminders">
+            <i class="fa-regular fa-clock"></i> Timed Reminders <span class="count-badge" id="count-badge-reminders">0</span>
+          </button>
+          <button class="content-tab-btn" data-filter="faqs">
+            <i class="fa-regular fa-circle-question"></i> FAQs <span class="count-badge" id="count-badge-faqs">0</span>
+          </button>
+        </div>
+
+        <!-- Dynamic Grid of Generated Content Cards -->
+        <div class="content-cards-grid" id="generated-cards-container">
+          <!-- Injected via JavaScript -->
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           SCREEN 4: MY EVENTS (DASHBOARD & MANAGEMENT)
+           ===================================================================== -->
+      <section class="page-screen" id="screen-events">
+        <!-- Stats Overview -->
+        <div class="stats-overview-grid">
+          <div class="stat-card">
+            <div class="stat-icon indigo">
+              <i class="fa-solid fa-calendar-days"></i>
+            </div>
+            <div>
+              <div class="stat-val" id="stat-total-events">0</div>
+              <div class="stat-label">Total Events Created</div>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon emerald">
+              <i class="fa-solid fa-file-lines"></i>
+            </div>
+            <div>
+              <div class="stat-val" id="stat-total-pieces">0</div>
+              <div class="stat-label">Communication Pieces Generated</div>
+            </div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-icon purple">
+              <i class="fa-solid fa-database"></i>
+            </div>
+            <div>
+              <div class="stat-val" style="font-size:1.4rem;">Local / Cloud</div>
+              <div class="stat-label">Persistent Storage Mode</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Section Header -->
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem; flex-wrap:wrap; gap:1rem;">
+          <div>
+            <h2 style="font-size:1.5rem; font-weight:800; color:var(--text-main);">Saved Events</h2>
+            <p style="font-size:0.9rem; color:var(--text-muted);">Events are automatically stored in your browser and will persist when you reopen the page.</p>
+          </div>
+          <button class="btn btn-primary" data-route="create">
+            <i class="fa-solid fa-plus"></i> Create New Event
+          </button>
+        </div>
+
+        <!-- Saved Events Grid -->
+        <div class="events-list-grid" id="saved-events-grid">
+          <!-- Populated by JavaScript -->
+        </div>
+
+        <!-- Empty State Card -->
+        <div class="empty-state-card" id="empty-events-state" style="display:none;">
+          <div class="empty-state-icon">
+            <i class="fa-regular fa-calendar-xmark"></i>
+          </div>
+          <h3 style="font-size:1.3rem; font-weight:700; margin-bottom:0.5rem;">No Saved Events Found</h3>
+          <p style="color:var(--text-muted); font-size:0.9rem; margin-bottom:1.5rem;">
+            You haven't generated any events yet. Fill in your first event details to generate social posts, circulars, and reminders!
+          </p>
+          <button class="btn btn-primary" data-route="create">
+            <i class="fa-solid fa-plus"></i> Create Your First Event
+          </button>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           SCREEN 5: ABOUT EVENT MATE
+           ===================================================================== -->
+      <section class="page-screen" id="screen-about">
+        <div class="help-guide-container">
+          <div style="text-align:center; margin-bottom:3rem;">
+            <span class="badge-tag" style="margin-bottom:0.75rem;">About The Platform</span>
+            <h2 style="font-size:2.2rem; font-weight:800; color:var(--text-main); margin-bottom:0.75rem;">
+              Empowering Student Clubs & Event Organizers
+            </h2>
+            <p style="color:var(--text-muted); font-size:1.05rem; max-width:700px; margin:0 auto; line-height:1.6;">
+              Organizing college hackathons, technical workshops, cultural fests, and campus seminars takes tremendous effort. Writing the same event details over and over for Instagram, WhatsApp groups, official notices, and emails is time-consuming and prone to errors.
+            </p>
+          </div>
+
+          <div style="background:var(--bg-surface); border:1px solid var(--border-color); border-radius:var(--radius-xl); padding:2rem; margin-bottom:2rem; box-shadow:var(--shadow-sm);">
+            <h3 style="font-size:1.3rem; font-weight:700; margin-bottom:1rem; color:var(--text-main);">
+              Why Event Mate?
+            </h3>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:1.5rem;">
+              <div>
+                <h4 style="font-weight:700; margin-bottom:0.35rem; color:var(--primary);"><i class="fa-solid fa-clock mr-1"></i> Saves Hours of Work</h4>
+                <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.5;">Type your venue, date, and description once. Instant copy-ready kits generated in under 1 second.</p>
+              </div>
+              <div>
+                <h4 style="font-weight:700; margin-bottom:0.35rem; color:var(--primary);"><i class="fa-solid fa-globe mr-1"></i> Multilingual Inclusivity</h4>
+                <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.5;">Native support for English, Telugu (తెలుగు), and Hindi (हिंदी) so regional campus communities are included.</p>
+              </div>
+              <div>
+                <h4 style="font-weight:700; margin-bottom:0.35rem; color:var(--primary);"><i class="fa-solid fa-wallet mr-1"></i> 100% Free & No Vendor Lock-in</h4>
+                <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.5;">Runs locally in any browser or with standard Firebase. No expensive subscription fees or forced software.</p>
+              </div>
+              <div>
+                <h4 style="font-weight:700; margin-bottom:0.35rem; color:var(--primary);"><i class="fa-solid fa-shield-halved mr-1"></i> Complete Privacy & Transparency</h4>
+                <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.5;">No secret background spamming. Review messages before sending with official WhatsApp click-to-chat & mailto drafts.</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="background:var(--bg-subtle); border-radius:var(--radius-lg); padding:1.75rem; border:1px solid var(--border-color);">
+            <h4 style="font-weight:700; margin-bottom:0.5rem; color:var(--text-main);">Built for Hackathon Presentations</h4>
+            <p style="font-size:0.9rem; color:var(--text-muted); line-height:1.6;">
+              Event Mate is engineered with clean, modular HTML5, modern CSS3, and Vanilla JavaScript. It requires zero compilation, zero Node.js build steps, and can be demonstrated on any laptop simply by opening <code>index.html</code>.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- =====================================================================
+           SCREEN 6: HELP & FAQS
+           ===================================================================== -->
+      <section class="page-screen" id="screen-help">
+        <div class="help-guide-container">
+          <div style="text-align:center; margin-bottom:2.5rem;">
+            <span class="badge-tag" style="margin-bottom:0.75rem;">Help Center</span>
+            <h2 style="font-size:2rem; font-weight:800; color:var(--text-main); margin-bottom:0.5rem;">
+              How to Use Event Mate
+            </h2>
+            <p style="color:var(--text-muted); font-size:1rem;">
+              Follow these simple steps to generate and distribute your event communications.
+            </p>
+          </div>
+
+          <!-- 5 Step Visual Workflow -->
+          <div class="workflow-steps-grid">
+            <div class="step-card">
+              <div class="step-number-badge">1</div>
+              <h4 style="font-weight:700; margin-bottom:0.35rem;">Enter Event Details</h4>
+              <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.5;">
+                Provide the event title, category, date, venue, description, and registration link in the Create Event form.
+              </p>
+            </div>
+
+            <div class="step-card">
+              <div class="step-number-badge">2</div>
+              <h4 style="font-weight:700; margin-bottom:0.35rem;">Generate All Content</h4>
+              <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.5;">
+                Click "Generate All Content" to instantly produce captions, official notices, WhatsApp messages, reminders, and FAQs.
+              </p>
+            </div>
+
+            <div class="step-card">
+              <div class="step-number-badge">3</div>
+              <h4 style="font-weight:700; margin-bottom:0.35rem;">Edit & Copy</h4>
+              <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.5;">
+                Customize any message directly using the inline "Edit" button, or copy any card to your clipboard with one click.
+              </p>
+            </div>
+
+            <div class="step-card">
+              <div class="step-number-badge">4</div>
+              <h4 style="font-weight:700; margin-bottom:0.35rem;">Save & Reuse</h4>
+              <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.5;">
+                Your events are preserved in your browser's local storage and can be reopened or downloaded anytime from "My Events".
+              </p>
+            </div>
+
+            <div class="step-card">
+              <div class="step-number-badge">5</div>
+              <h4 style="font-weight:700; margin-bottom:0.35rem;">Share Instantly</h4>
+              <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.5;">
+                Click "Open in WhatsApp" to preview in chat, or "Create Email Draft" to load pre-filled subjects and bodies in your mail app.
+              </p>
+            </div>
+          </div>
+
+          <!-- FAQ Accordions -->
+          <h3 style="font-size:1.4rem; font-weight:800; color:var(--text-main); margin-bottom:1rem;">Frequently Asked Questions</h3>
+
+          <div class="faq-accordion-item">
+            <button class="faq-question-btn" onclick="this.nextElementSibling.classList.toggle('open')">
+              <span>How does the WhatsApp Click-to-Chat feature work?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer-body">
+              The "Open in WhatsApp" button uses the official WhatsApp <code>https://wa.me/?text=...</code> API with URL-encoded message text. It opens WhatsApp on your phone or web browser, allowing you to choose any contact or group and review the formatted text before sending. It does not send unsolicited automatic spam.
+            </div>
+          </div>
+
+          <div class="faq-accordion-item">
+            <button class="faq-question-btn" onclick="this.nextElementSibling.classList.toggle('open')">
+              <span>Does Event Mate send automatic emails?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer-body">
+              No. Event Mate provides a "Create Email Draft" button using standard <code>mailto:</code> links with pre-filled subject and body parameters. This opens your default email client (Outlook, Gmail, Apple Mail) so you maintain full control over recipients and attachments.
+            </div>
+          </div>
+
+          <div class="faq-accordion-item">
+            <button class="faq-question-btn" onclick="this.nextElementSibling.classList.toggle('open')">
+              <span>Will my saved events disappear if I close the browser?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer-body">
+              No. All saved events and generated content are stored in your browser's <code>localStorage</code>. They remain safely saved even after closing or refreshing the tab. If you configure Firebase in <code>firebase-config.js</code>, your data will additionally sync to Cloud Firestore.
+            </div>
+          </div>
+
+          <div class="faq-accordion-item">
+            <button class="faq-question-btn" onclick="this.nextElementSibling.classList.toggle('open')">
+              <span>How do I configure Firebase Authentication and Firestore?</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div class="faq-answer-body">
+              Open <code>firebase-config.js</code> in your code editor. Create a free project at <a href="https://console.firebase.google.com" target="_blank">console.firebase.google.com</a>, enable Authentication (Email/Password) and Cloud Firestore, and paste your web app credentials into the <code>FIREBASE_CONFIG</code> object. If left blank, the app will continue to run seamlessly in Demo Mode!
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- =========================================================================
+       MODALS
+       ========================================================================= -->
+
+  <!-- 1. Status & Demo Mode Info Modal -->
+  <div class="modal-overlay" id="modal-status-info">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3><i class="fa-solid fa-circle-info text-indigo-500 mr-2"></i> Connection & Demo Mode</h3>
+        <button class="btn btn-ghost btn-sm" onclick="EventMateApp.closeModal('modal-status-info')">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div style="background:#f0fdf4; border:1px solid #bbf7d0; border-radius:var(--radius-md); padding:1rem; margin-bottom:1rem;">
+          <h4 style="color:#166534; font-weight:700; margin-bottom:0.25rem;">
+            <i class="fa-solid fa-circle-check"></i> Demo Mode Active
+          </h4>
+          <p style="font-size:0.88rem; color:#14532d; line-height:1.5;">
+            Event Mate is currently running in zero-dependency Demo Mode using browser <code>localStorage</code>. All features (generating 6 communication types, copying, editing, downloading, and saving) are 100% operational!
+          </p>
+        </div>
+
+        <h4 style="font-weight:700; font-size:0.95rem; margin-bottom:0.5rem;">Optional Firebase Integration:</h4>
+        <p style="font-size:0.88rem; color:var(--text-muted); line-height:1.5; margin-bottom:1rem;">
+          To enable cloud sync across multiple devices, simply add your Firebase project keys into <code>firebase-config.js</code>. Never expose private service account secrets in client code.
+        </p>
+
+        <ul style="font-size:0.85rem; color:var(--text-muted); padding-left:1.25rem; line-height:1.6;">
+          <li>Free tier Cloud Firestore storage</li>
+          <li>User email/password authentication</li>
+          <li>Cross-device persistence</li>
+        </ul>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-primary" onclick="EventMateApp.closeModal('modal-status-info')">
+          Understood
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Delete Event Confirmation Modal -->
+  <div class="modal-overlay" id="modal-delete-confirm">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3 style="color:var(--danger);"><i class="fa-solid fa-triangle-exclamation mr-2"></i> Delete Event?</h3>
+        <button class="btn btn-ghost btn-sm" onclick="EventMateApp.closeModal('modal-delete-confirm')">
+          <i class="fa-solid fa-xmark text-lg"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p style="font-size:0.95rem; color:var(--text-main); margin-bottom:0.75rem;">
+          Are you sure you want to delete <strong id="delete-event-name-display">this event</strong>?
+        </p>
+        <p style="font-size:0.85rem; color:var(--text-muted); line-height:1.5;">
+          This will permanently remove the event and all of its generated communication pieces from your saved events list. This action cannot be undone.
+        </p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="EventMateApp.closeModal('modal-delete-confirm')">
+          Cancel
+        </button>
+        <button class="btn btn-danger" id="btn-confirm-delete-action">
+          Yes, Delete Event
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       TOAST NOTIFICATION CONTAINER
+       ========================================================================= -->
+  <div id="toast-container"></div>
+
+  <!-- =========================================================================
+       FOOTER
+       ========================================================================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-inner">
+        <div>
+          <div style="font-weight:800; font-size:1.15rem; color:var(--text-main); margin-bottom:0.25rem;">
+            Event<span style="color:var(--primary);">Mate</span>
+          </div>
+          <p style="font-size:0.85rem; color:var(--text-muted);">
+            One Event. Every Message. Instantly. Built for College Clubs & Hackathons.
+          </p>
+        </div>
+        <ul class="footer-nav">
+          <li><a href="#home" data-route="home">Home</a></li>
+          <li><a href="#create" data-route="create">Create Event</a></li>
+          <li><a href="#events" data-route="events">My Events</a></li>
+          <li><a href="#about" data-route="about">About</a></li>
+          <li><a href="#help" data-route="help">Help & FAQs</a></li>
+        </ul>
+      </div>
+      <div style="text-align:center; font-size:0.78rem; color:var(--text-light); margin-top:2rem; padding-top:1.5rem; border-top:1px solid var(--border-color);">
+        &copy; 2026 Event Mate. Open-source hackathon solution. No external dependencies required.
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       JAVASCRIPT SCRIPTS
+       ========================================================================= -->
+  <!-- Optional Firebase SDKs (Compat) -->
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.8.0/firebase-firestore-compat.js"></script>
+
+  <!-- Event Mate Scripts -->
+  <script src="firebase-config.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
